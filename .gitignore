@@ -1,0 +1,4 @@
+tmp/*
+go-sec-code
+.vscode/launch.json
+*.tmp
