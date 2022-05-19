@@ -33,7 +33,6 @@ func (c *XXEVuln1Controller) Get() {
 
 func (c *XXEVuln1Controller) Post() {
 	file := c.GetString("file")
-	fmt.Println(file)
 	p := parser.New(parser.XMLParseNoEnt)
 	doc, err := p.ParseReader(bytes.NewReader([]byte(file)))
 	if err != nil {
@@ -41,7 +40,6 @@ func (c *XXEVuln1Controller) Post() {
 	}
 	defer doc.Free()
 	root, err := doc.DocumentElement()
-	fmt.Println(root.TextContent())
 	xxe := root.TextContent()
 	c.Data["xxe"] = xxe
 	c.TplName = "xxe.tpl"
@@ -73,24 +71,3 @@ func (c *XXESafe1Controller) Post() {
 	c.Data["xxe"] = xxe
 	c.TplName = "xxe.tpl"
 }
-
-// func (c *XXEVuln2Controller) Get() {
-// 	file, err := ioutil.ReadFile("static/xml/xxe.xml")
-// 	if err != nil {
-// 		panic(err)
-// 	}
-// 	c.Data["xxe"] = string(file)
-// 	c.TplName = "xxe.tpl"
-// }
-
-// func (c *XXEVuln2Controller) Post() {
-// 	file := c.GetString("file")
-// 	doc, err := gokogiri.ParseXml([]byte(file))
-// 	if err != nil {
-// 		panic(err)
-// 	}
-// 	xxe := doc.String()
-// 	doc.Free()
-// 	c.Data["xxe"] = xxe
-// 	c.TplName = "xxe.tpl"
-// }

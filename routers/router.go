@@ -38,9 +38,11 @@ func init() {
 	beego.Router("/ssti/safe", &controllers.SSTISafe1Controller{})
 	beego.Router("/xss/vuln", &controllers.XSSVuln1Controller{})
 	beego.Router("/xss/vuln/store", &controllers.XSSVuln2Controller{})
+	beego.Router("/xss/vuln/svg", &controllers.XSSVuln3Controller{})
+	beego.Router("/xss/vuln/pdf", &controllers.XSSVuln4Controller{})
 	beego.Router("/xss/safe", &controllers.XSSSafe1Controller{})
+	beego.Router("/xss/safe/svg", &controllers.XSSSafe2Controller{})
 	beego.Router("/xxe/vuln", &controllers.XXEVuln1Controller{})
-	// beego.Router("/xxe/vuln/gokogiri", &controllers.XXEVuln2Controller{})
 	beego.Router("/xxe/safe", &controllers.XXESafe1Controller{})
 	beego.Router("/abc/aaa", &controllers.BypassController{})
 	beego.InsertFilter("/abc/aaa", beego.BeforeStatic, func(ctx *context.Context) {
