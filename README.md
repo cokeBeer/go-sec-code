@@ -5,7 +5,12 @@
 > Go-sec-code is a  project for learning Go vulnerability code.
 
 ### 🏠 [Homepage](https://github.com/cokeBeer/go-sec-code)
-
+- [Introduction](#introduction)
+- [Install](#install)
+- [漏洞说明](#漏洞说明)
+  - [SSTI](#ssti)
+  - [XXE](#xxe)
+  - [SSRF](#ssrf)
 ## Introduction
 
 用beego作为后端框架开发的go语言靶场，目前已经完成
@@ -18,7 +23,7 @@
   - 反射型Cors
   -  any-origin-with-credential
   - 安全代码
-- CRLF-Injection
+- CRLFInjection
   - 安全代码
 - FileUpload
   - 利用POST参数任意目录写文件
@@ -31,10 +36,13 @@
   - 无防护
   - 安全代码
 - SQLInjection
-- - 数字型注入
+  - 数字型注入
   - 字符型注入
+  - 错误的ORM使用
+  - 错误的SQL生成器使用
   - 数字型安全代码
   - 字符型安全代码
+  - ORM安全代码
 - SSRF
   - 无防护
   - 混淆绕过
@@ -46,7 +54,10 @@
 - XSS
   - 反射型xss
   - 存储型xss
-  - 安全代码
+  - SVG型xss
+  - PDF型xss
+  - 基于过滤的修复
+  - 基于CSP的修复
 - XXE
   - 漏洞代码
   - 安全代码
@@ -69,7 +80,7 @@ bee run
 
 服务器就运行在http://localhost:233 上了
 
-![](https://i.bmp.ovh/imgs/2022/01/fd4de9863e26bd23.png)
+![](https://i.bmp.ovh/imgs/2022/05/24/d8f3279d6a087c93.png)
 
 为了测试SQLInjection，需要连接数据库。这里使用mysql，先执行下面的语句创建数据库和表
 
