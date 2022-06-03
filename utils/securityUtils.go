@@ -28,7 +28,7 @@ type XSSFilter struct {
 }
 
 func (c *CommandInjectFilter) DoFilter(input string) bool {
-	r, _ := regexp.Compile("^[a-zA-Z0-9_/\\.-]+$")
+	r, _ := regexp.Compile(`^[a-zA-Z0-9_/\.-]+$`)
 	return r.MatchString(input)
 }
 
@@ -42,7 +42,7 @@ func (c *CorsFilter) DoFilter(input string, whitelists []string) bool {
 }
 
 func (c *FileUploadFilter) DoFilter(input string) bool {
-	r, _ := regexp.Compile("\\.\\./")
+	r, _ := regexp.Compile(`\.\./`)
 	return r.MatchString(input)
 }
 
@@ -60,7 +60,7 @@ func (c *JsonpFilter) DoFilter(input string, whitelists []string) bool {
 }
 
 func (c *PathTraversalFilter) DoFilter(input string) bool {
-	r, _ := regexp.Compile("\\.\\./")
+	r, _ := regexp.Compile(`\.\./`)
 	return r.MatchString(input) || strings.HasPrefix(input, "/")
 }
 

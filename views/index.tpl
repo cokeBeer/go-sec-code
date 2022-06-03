@@ -19,7 +19,8 @@
     <div class="col-sm-4">
       <h3>CommandInject</h3>
       <h4><a href="/commandInject/vuln?dir=%2F">vuln:unchecked get param</a></h4>
-      <h4><a href=/commandInject/vuln/host>vuln:unchecked host</a></h4>
+      <h4><a href="/commandInject/vuln/host">vuln:unchecked host</a></h4>
+      <h4><a href="/commandInject/vuln/git?repoUrl=--upload-pack=$(open /)">vuln:unchecked git param</a></h4>
       <h4><a href="/commandInject/safe?dir=.%3Bwhoami">safe:filter</a></h4>
     </div>
     <div class="col-sm-4">
@@ -48,7 +49,9 @@
     <div class="col-sm-4">
       <h3>PathTraversal</h3>        
       <h4><a href="/pathTraversal/vuln?file=../../../../../../../etc/passwd">vuln:unchecked get param</a></h4>
-      <h4><a href="/pathTraversal/safe?file=../../../../../../../etc/passwd">safe:filter</a></h4>
+      <h4><a href="/pathTraversal/vuln?file=../../../../../../../etc/passwd">vuln:use Clean() improperly</a></h4>
+      <h4><a href="/pathTraversal/safe/filter?file=../../../../../../../etc/passwd">safe:filter</a></h4>
+      <h4><a href="/pathTraversal/safe/check?file=../../../../../../../etc/passwd">safe:check</a></h4>
     </div>
   </div>
   <div class="row">

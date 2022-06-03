@@ -16,6 +16,10 @@ type CommandInjectVuln2Controller struct {
 	beego.Controller
 }
 
+type CommandInjectVuln3Controller struct {
+	beego.Controller
+}
+
 type CommandInjectSafe1Controller struct {
 	beego.Controller
 }
@@ -26,7 +30,6 @@ func (c *CommandInjectVuln1Controller) Get() {
 	cmd := exec.Command("bash", "-c", input)
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		fmt.Println(err)
 		panic(err)
 	}
 	c.Ctx.ResponseWriter.Write(out)
@@ -34,12 +37,19 @@ func (c *CommandInjectVuln1Controller) Get() {
 
 func (c *CommandInjectVuln2Controller) Get() {
 	host := c.Ctx.Request.Host
-	fmt.Println(host)
 	input := fmt.Sprintf("curl %s", host)
 	cmd := exec.Command("bash", "-c", input)
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		fmt.Println(err)
+		panic(err)
+	}
+	c.Ctx.ResponseWriter.Write(out)
+}
+
+func (c *CommandInjectVuln3Controller) Get() {
+	repoUrl := c.GetString("repoUrl")
+	out, err := exec.Command("git", "ls-remote", repoUrl, "refs/heads/main").CombinedOutput()
+	if err != nil {
 		panic(err)
 	}
 	c.Ctx.ResponseWriter.Write(out)
@@ -57,7 +67,6 @@ func (c *CommandInjectSafe1Controller) Get() {
 	cmd := exec.Command("bash", "-c", input)
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		fmt.Println(err)
 		panic(err)
 	}
 	c.Ctx.ResponseWriter.Write(out)

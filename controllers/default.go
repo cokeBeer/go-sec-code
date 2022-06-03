@@ -11,3 +11,8 @@ type MainController struct {
 func (c *MainController) Get() {
 	c.TplName = "index.tpl"
 }
+
+func (c *MainController) Post() {
+	foo := c.GetString("foo")
+	c.Ctx.ResponseWriter.Write([]byte(foo))
+}

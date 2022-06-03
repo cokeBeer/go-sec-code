@@ -34,7 +34,9 @@
   - 安全代码
 - PathTraversal
   - 无防护
-  - 安全代码
+  - 错误使用Clean()
+  - 安全代码（过滤）
+  - 安全代码（前缀检查）
 - SQLInjection
   - 数字型注入
   - 字符型注入
@@ -109,3 +111,7 @@ go语言本身提供的模版引擎仅支持简单的渲染功能，不像php、
 go语言本身提供的xml解析库直接忽略了xml文档中的entity和dtd标签。这里在设计漏洞代码的时候找到了一个go语言实现的libxml2库[libxml2](https://github.com/lestrrat-go/libxml2)，有193个star。这个增强库可以设置支持entity。其他go语言实现的xml库大多不支持entity和dtd标签，或者是直接封装了go语言本身提供的xml库。
 ### SSRF
 SSRF提供了三种漏洞情形，一种安全情形。其中第二种漏洞情形用来表示黑名单不完善的情况，第三种漏洞情形来表示黑名单较为完善的情况。黑名单一般要用到字符串比较函数来实现。go语言中进行字符串比较的函数主要是`strings.HasSuffix`。这个函数在比较时不考虑大小写，如果直接使用这个函数进行比较，会导致大小写绕过。更安全的写法是使用`strings.ToLower`先将域名统一转换为小写再进行比较。
+
+### Path Traversal
+
+go语言提供了`filepath.Clean()`方法来规范化路径。但是这个方法不会规范没有以`/`开头的相对路径，例如`../../secret`。简单地使用`filepath.Clean()`方法来规范化路径会导致路径变遍历。比较安全的写法是使用`filepath.Join()`将制定目录与传入的参数进行拼接，然后使用`strings.HasPrefix()`方法来检查是否发生了目录穿越
