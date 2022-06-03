@@ -11,6 +11,7 @@
   - [SSTI](#ssti)
   - [XXE](#xxe)
   - [SSRF](#ssrf)
+  - [Path Traversal](#path-traversal)
 ## Introduction
 
 用beego作为后端框架开发的go语言靶场，目前已经完成
@@ -18,6 +19,7 @@
 - commandInject
   - GET参数注入
   - Host头注入
+  - git参数注入
   - 安全代码
 - Cors
   - 反射型Cors
@@ -82,7 +84,7 @@ bee run
 
 服务器就运行在http://localhost:233 上了
 
-![](https://i.bmp.ovh/imgs/2022/05/24/d8f3279d6a087c93.png)
+![](https://i.bmp.ovh/imgs/2022/06/03/8caf8b02a1de896e.png)
 
 为了测试SQLInjection，需要连接数据库。这里使用mysql，先执行下面的语句创建数据库和表
 
