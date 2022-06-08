@@ -1,10 +1,7 @@
 package routers
 
 import (
-	"fmt"
 	"go-sec-code/controllers"
-
-	"github.com/beego/beego/v2/server/web/context"
 
 	beego "github.com/beego/beego/v2/server/web"
 )
@@ -51,7 +48,4 @@ func init() {
 	beego.Router("/xxe/vuln", &controllers.XXEVuln1Controller{})
 	beego.Router("/xxe/safe", &controllers.XXESafe1Controller{})
 	beego.Router("/abc/aaa", &controllers.BypassController{})
-	beego.InsertFilter("/abc/aaa", beego.BeforeStatic, func(ctx *context.Context) {
-		fmt.Println(fmt.Sprintf("filtered url:%s", ctx.Input.URL()))
-	})
 }
