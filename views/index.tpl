@@ -93,6 +93,10 @@
       <h4><a href="/xxe/vuln">vuln:libxml2</a></h4>
       <h4><a href="/xxe/safe">safe:unexploitable</a></h4>
     </div>
+    <div class="col-sm-4">
+      <h3>ZipSlip</h3>
+      <h4><a href="/zipslip/vuln">vuln</a></h4>
+    </div>
   </div>
 </div>
 

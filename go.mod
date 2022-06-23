@@ -10,11 +10,16 @@ require (
 	github.com/beego/beego/v2 v2.0.1
 	github.com/beevik/etree v1.1.0
 	github.com/go-sql-driver/mysql v1.6.0
+	github.com/google/go-cmp v0.5.8 // indirect
 	github.com/huandu/xstrings v1.3.2 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
+	github.com/kr/text v0.2.0 // indirect
 	github.com/lestrrat-go/libxml2 v0.0.0-20201123224832-e6d9de61b80d
 	github.com/mitchellh/copystructure v1.2.0 // indirect
 	golang.org/x/crypto v0.0.0-20220427172511-eb4f295cb31f // indirect
+	golang.org/x/sys v0.0.0-20220622161953-175b2fd9d664 // indirect
+	golang.org/x/tools v0.1.11 // indirect
+	golang.org/x/tools/gopls v0.8.4 // indirect
 	gopkg.in/xmlpath.v1 v1.0.0-20140413065638-a146725ea6e7 // indirect
 	launchpad.net/gocheck v0.0.0-20140225173054-000000000087 // indirect
 	launchpad.net/xmlpath v0.0.0-20130614043138-000000000004 // indirect

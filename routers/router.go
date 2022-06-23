@@ -47,5 +47,5 @@ func init() {
 	beego.Router("/xss/safe/svg", &controllers.XSSSafe2Controller{})
 	beego.Router("/xxe/vuln", &controllers.XXEVuln1Controller{})
 	beego.Router("/xxe/safe", &controllers.XXESafe1Controller{})
-	beego.Router("/abc/aaa", &controllers.BypassController{})
+	beego.Router("/zipslip/vuln", &controllers.ZipSlipVuln1Controller{})
 }
