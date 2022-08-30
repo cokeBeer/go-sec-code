@@ -86,7 +86,7 @@ bee run
 
 服务器就运行在http://localhost:233 上了
 
-![](https://i.bmp.ovh/imgs/2022/06/23/6644ec7654ea40c9.png)
+![](go-sec-code.png)
 
 为了测试SQLInjection，需要连接数据库。这里使用mysql，先执行下面的语句创建数据库和表
 
