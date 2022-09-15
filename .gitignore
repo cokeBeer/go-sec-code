@@ -5,3 +5,4 @@ go-sec-code
 __debug_bin
 static/upload/*
 static/unzip/*
+cmd
