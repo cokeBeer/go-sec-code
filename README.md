@@ -16,7 +16,7 @@
 
 用beego作为后端框架开发的go语言靶场，目前已经完成
 
-- commandInject
+- CommandInjection
   - GET参数注入
   - Host头注入
   - git参数注入
