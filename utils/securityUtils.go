@@ -60,7 +60,7 @@ func (c *JsonpFilter) DoFilter(input string, whitelists []string) bool {
 }
 
 func (c *PathTraversalFilter) DoFilter(input string) bool {
-	r, _ := regexp.Compile(`\.\./`)
+	r, _ := regexp.Compile(`\.\.`)
 	return r.MatchString(input) || strings.HasPrefix(input, "/")
 }
 
@@ -99,7 +99,7 @@ func (c *SSRFFilter) DoWhiteFilter(input string, whitelists []string) bool {
 	return true
 }
 
-//this filter comes from fix of cve-2022-0870 gogs SSRF
+// this filter comes from fix of cve-2022-0870 gogs SSRF
 func (c *SSRFFilter) DoGogsFilter(input string) bool {
 	return IsLocalHostname(input, nil)
 }
