@@ -68,7 +68,7 @@
     <div class="col-sm-4">
       <h3>SSRF</h3>
       <h4><a href="/ssrf/vuln?url">vuln:unchecked get param</a></h4>
-      <h4><a href="/ssrf/vuln/confuse?url">vuln:confuse bypass</a></h4>
+      <h4><a href="/ssrf/vuln/obfuscation?url">vuln:obfuscation bypass</a></h4>
       <h4><a href="/ssrf/vuln/302?url">vuln:302 bypass</a></h4>
       <h4><a href="/ssrf/safe/whitelists?url">safe:whitelist</a></h4>
     </div>

@@ -34,7 +34,7 @@ func init() {
 	beego.Router("/sqlInjection/native/safe/string", &controllers.SqlInjectionSafe2Controller{})
 	beego.Router("/sqlInjection/orm/safe/beego", &controllers.SqlInjectionSafe3Controller{})
 	beego.Router("/ssrf/vuln", &controllers.SSRFVuln1Controller{})
-	beego.Router("/ssrf/vuln/confuse", &controllers.SSRFVuln2Controller{})
+	beego.Router("/ssrf/vuln/obfuscation", &controllers.SSRFVuln2Controller{})
 	beego.Router("/ssrf/vuln/302", &controllers.SSRFVuln3Controller{})
 	beego.Router("/ssrf/safe/whitelists", &controllers.SSRFSafe1Controller{})
 	beego.Router("/ssti/vuln", &controllers.SSTIVuln1Controller{})

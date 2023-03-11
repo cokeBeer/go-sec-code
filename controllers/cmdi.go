@@ -47,7 +47,7 @@ func (c *CommandInjectVuln2Controller) Get() {
 }
 
 func (c *CommandInjectVuln3Controller) Get() {
-	repoUrl := c.GetString("repoUrl")
+	repoUrl := c.GetString("repoUrl", "--upload-pack=${touch /tmp/pwnned}")
 	out, err := exec.Command("git", "ls-remote", repoUrl, "refs/heads/main").CombinedOutput()
 	if err != nil {
 		panic(err)
